@@ -14,7 +14,7 @@ const NavBar = () => {
                     <Tab>RAM</Tab>
                     <Tab>Cases</Tab>
                     <Tab>Cooling</Tab>
-                    <Tab><CartWidget /></Tab>
+                    <Tab className='cart'><CartWidget /></Tab>
                 </TabList>
             </Tabs>
         </nav>

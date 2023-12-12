@@ -1,8 +1,11 @@
-import { Heading } from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react';
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({ greeting, children }) => {
     return (
-        <Heading align='center'>{greeting}</Heading>
+        <div className='item-container'>
+            <Heading align='center'>{ greeting }</Heading>
+            {children}
+        </div>
     )
 }
 

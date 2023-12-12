@@ -1,3 +1,31 @@
 .logo {
     width: 32px;
 }
+
+.shopping-bag {
+    width: 24px;
+}
+
+.cart {
+    margin-left: auto;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.item-count-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.add-icon {
+    display: flex;
+}
