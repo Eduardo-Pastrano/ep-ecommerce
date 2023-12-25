@@ -1,14 +1,28 @@
-import ItemListContainer from './components/ItemListContainer';
-import NavBar from './components/NavBar';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from './components/NavBar.jsx';
+import ItemListContainer from './components/ItemListContainer.jsx';
+import ItemDetailContainer from './components/ItemDetailContainer.jsx';
+import Error from "./components/Error.jsx";
 import './App.css';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer greeting="Welcome!" />
-    </>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="categories/:category" element={<ItemListContainer />} />
+        <Route path="/detail/:id" element={<ItemDetailContainer />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+// Routes lo importamos para poder empezar a linkear nuestros elementos.
+
+// NavBar lo dejamos fuera de Routes por que queremos que siempre se muestre, no solo cuando estamos dentro de un componente en especifico, lo mismo para el footer y otros elementos que queramos que siempre se muestren.
+
+// BrowserRouter lo importamos para poder crear rutas y conectar nuestra app.
