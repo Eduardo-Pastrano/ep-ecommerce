@@ -1,6 +1,17 @@
+import { useState } from 'react';
+import { Button } from '@chakra-ui/react';
 import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ product }) => {
+
+    const [toggle, setToggle] = useState(false);
+
+    const addToCart = (count) => {
+        console.log(count);
+        setToggle(true);
+    }
+
     return (
         <div className="item-detail-container">
             <div className="item-detail">
@@ -28,9 +39,15 @@ const ItemDetail = ({ product }) => {
                     </div>
                 </div>
             </div>
-            <div className='item-count-container'>
-                <ItemCount stock={product.stock} />
-            </div>
+            {toggle ? (
+                <Link to={'/cart'}>
+                    <Button className="go-cart-btn">Go to checkout</Button>
+                </Link>
+            ) : (
+                <div className='item-detail-count-container'>
+                    <ItemCount stock={product.stock} addToCart={addToCart} />
+                </div>
+            )}
         </div>
     )
 }

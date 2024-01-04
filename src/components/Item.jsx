@@ -1,11 +1,28 @@
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Item = ({ product }) => {
+    const [zoom, setZoom] = useState(false);
+
+    const handleMouseOver = () => {
+        setZoom(true);
+    };
+
+    const handleMouseLeave = () => {
+        setZoom(false);
+    };
+
+    const imgStyle = {
+        transform: zoom ? 'scale(1.1)' : 'scale(1)',
+        transition: 'transform .3s ease-in-out'
+    } 
+    
+
     return (
         <div className="item">
             <div className="img-container">
-                <img className="item-img" src={product.pictureUrl} alt={product.title} />
+                <img style={imgStyle} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} className="item-img" src={product.pictureUrl} alt={product.title} />
             </div>
             <div className="item-details-container">
                 <p className="item-title">{product.title}</p>

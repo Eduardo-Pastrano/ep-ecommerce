@@ -53,7 +53,6 @@
     padding: 10px;
 }
 
-
 .item .item-title {
     margin: 5px 0;
 }
@@ -64,7 +63,7 @@
     font-weight: bold;
 }
 
-.item-btn-container {
+.item .item-btn-container {
     margin-top: 15px;
 }
 
@@ -80,17 +79,27 @@
     align-items: flex-start;
 }
 
-.item-detail-container .item-count-container {
-    margin: 40px;
+.item-detail-container .item-detail-count-container {
+    margin-left: 40px;
 }
 
-.item-count-btn {
+.item-count-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-count-container .item-count-btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     font-size: 20px;
 }
+
+.item-count-container .item-add-btn-container .item-add-btn {
+    width: 100%;
+} 
 
 .item-detail-container .item-detail {
     display: flex;
