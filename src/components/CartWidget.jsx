@@ -1,9 +1,12 @@
-import { Button } from '@chakra-ui/react';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 const CartWidget = () => {
+    const { totalQty } = useContext(CartContext);
+
     return (
         <>
-            <Button variant='link'><img src="/img/shopping-bag.png" alt="shopping-bag" className='shopping-bag' />5</Button>
+            <img src="/img/shopping-bag.png" alt="shopping-bag" className='shopping-bag' />{totalQty()}
         </>
     )
 }

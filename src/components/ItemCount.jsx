@@ -20,12 +20,12 @@ const ItemCount = ({ stock, addToCart }) => {
         <>
             <div className="item-count-container">
                 <div className="item-count-btn-container">
-                    <Button onClick={increase} colorScheme="blue">➕</Button>
+                    <Button onClick={increase} className="count-tbn">+</Button>
                     <p>{count}</p>
-                    <Button onClick={decrease} colorScheme="blue">➖</Button>
+                    <Button onClick={decrease} className="count-tbn">-</Button>
                 </div>
                 <div className="item-add-btn-container">
-                    <Button  onClick={ () => addToCart(count) } colorScheme="green" className="item-add-btn">Add to cart</Button>
+                    <Button  onClick={ () => addToCart(count) } className="item-add-btn">Add to cart</Button>
                 </div>
             </div>
         </>

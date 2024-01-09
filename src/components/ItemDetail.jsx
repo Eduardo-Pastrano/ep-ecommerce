@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Button } from '@chakra-ui/react';
-import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
+import ItemCount from './ItemCount';
+import { CartContext } from "../context/CartContext.jsx"
 
 const ItemDetail = ({ product }) => {
 
     const [toggle, setToggle] = useState(false);
+    const { addProduct } = useContext(CartContext);
 
     const addToCart = (count) => {
-        console.log(count);
+        const newProduct = { ...product, quantity: count };
+        addProduct(newProduct);
         setToggle(true);
     }
 
@@ -25,9 +28,9 @@ const ItemDetail = ({ product }) => {
                     <div className='detail-about'>
                         <h3>Highlights</h3>
                         <ul>
-                            <li>{product.about1}</li>
-                            <li>{product.about2}</li>
-                            <li>{product.about3}</li>
+                            <li>{product.key1}</li>
+                            <li>{product.key2}</li>
+                            <li>{product.key3}</li>
                         </ul>
                     </div>
                     <div className='detail-description'>
@@ -40,9 +43,11 @@ const ItemDetail = ({ product }) => {
                 </div>
             </div>
             {toggle ? (
-                <Link to={'/cart'}>
-                    <Button className="go-cart-btn">Go to checkout</Button>
-                </Link>
+                <div className="checkout-btn-container">
+                    <Link to="/cart">
+                        <Button className="checkout-btn">Go to checkout</Button>
+                    </Link>
+                </div>
             ) : (
                 <div className='item-detail-count-container'>
                     <ItemCount stock={product.stock} addToCart={addToCart} />

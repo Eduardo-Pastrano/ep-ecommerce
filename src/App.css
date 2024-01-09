@@ -97,9 +97,19 @@
     font-size: 20px;
 }
 
+.item-count-container .item-count-btn-container .count-btn {
+    font-size: 32px;
+}
+
 .item-count-container .item-add-btn-container .item-add-btn {
     width: 100%;
-} 
+    background-color: rgb(68, 181, 56);
+    color: white;
+}
+
+.item-count-container .item-add-btn-container .item-add-btn:hover {
+    background-color: rgb(68, 222, 51);
+}
 
 .item-detail-container .item-detail {
     display: flex;
@@ -143,4 +153,12 @@
 .item-detail-container .detail-info .detail-description p{
     font-size: 18px;
     margin-left: 50px;
+}
+
+.item-detail-container .checkout-btn-container {
+    margin-left: 40px;
+}
+
+.item-detail-container .checkout-btn-container .checkout-btn {
+    background-color: rgb(111, 233, 97)
 }

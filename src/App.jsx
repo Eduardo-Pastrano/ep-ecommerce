@@ -4,19 +4,23 @@ import ItemListContainer from './components/ItemListContainer.jsx';
 import ItemDetailContainer from './components/ItemDetailContainer.jsx';
 import Error from "./components/Error.jsx";
 import Cart from "./components/Cart.jsx"
+import { CartProvider } from "./context/CartContext.jsx"
 import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="categories/:category" element={<ItemListContainer />} />
-        <Route path="/detail/:id" element={<ItemDetailContainer />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <CartProvider>
+
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="categories/:category" element={<ItemListContainer />} />
+          <Route path="/detail/:id" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </CartProvider>
     </BrowserRouter>
   );
 }

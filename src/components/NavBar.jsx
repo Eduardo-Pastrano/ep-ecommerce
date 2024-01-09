@@ -33,8 +33,8 @@ const NavBar = () => {
                             <Tab>Cooling</Tab>
                         </Link>
                     </div>
-                    <Link to="#">
-                        <Tab className='cart'><CartWidget /></Tab>
+                    <Link to="/cart">
+                        <Tab><CartWidget /></Tab>
                     </Link>
                 </TabList>
             </Tabs>

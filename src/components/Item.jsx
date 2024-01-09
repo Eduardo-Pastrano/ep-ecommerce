@@ -16,8 +16,7 @@ const Item = ({ product }) => {
     const imgStyle = {
         transform: zoom ? 'scale(1.1)' : 'scale(1)',
         transition: 'transform .3s ease-in-out'
-    } 
-    
+    }
 
     return (
         <div className="item">
