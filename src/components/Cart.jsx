@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { Button } from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons"
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext.jsx';
 
@@ -8,7 +9,7 @@ const Cart = () => {
 
     if (cart.length === 0) {
         return (
-            <div>
+            <div className='cart-empty'>
                 <h1>Your cart is empty 😔</h1>
                 <Link to="/">
                     <Button className="item-link">Go to home</Button>
@@ -18,25 +19,35 @@ const Cart = () => {
     }
 
     return (
-        <>
-            <ul>
+        <div className='cart-container'>
+            <ul className='cart-products'>
                 {
                     cart.map((product) => (
-                        <li key={product.id}>
-                            <img src={product.pictureUrl} alt="" />
-                            <p>Product: {product.title}</p>
-                            <p>Price: {product.price}</p>
-                            <p>Quantity: {product.quantity}</p>
-                            <Button onClick={() => delProductFromCart(product.id)} colorScheme='red'>X</Button>
+                        <li key={product.id} className='item'>
+                            <div className='img-container'>
+                                <img src={product.pictureUrl} alt={product.title} className="item-img" />
+                            </div>
+                            <div className="item-details-container">
+                                <p className="item-title">{product.title}</p>
+                                <p className="item-price">Price: ${product.price}</p>
+                                <p className="item-quantity">Quantity: {product.quantity}</p>
+                                <div className="item-btn-container">
+                                    <Button onClick={() => delProductFromCart(product.id)} colorScheme='red'>Remove<DeleteIcon boxSize={5} /></Button>
+                                </div>
+                            </div>
                         </li>
                     ))
                 }
-                <h2>Cart total: ${totalPrice()}</h2>
+            </ul>
+            <ul className='cart-total-container'>
+                <li className='cart-total'>
+                    <strong>Cart total:</strong> ${totalPrice()}
+                </li>
                 <li>
                     <Button onClick={emptyCart} colorScheme='red'>Empty cart</Button>
                 </li>
             </ul>
-        </>
+        </div>
     )
 }
 

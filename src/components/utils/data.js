@@ -15,7 +15,7 @@ const products = [
         id: "CPU-2",
         title: "AMD Ryzen™ 9 7950X 16-Core, 32-Thread",
         description: "Processor with 4.20 GHz clock speed for quick and dependable processing of data to ensure maximum productivity, this hexadeca-core (16 Core) processor core efficiently handles data to ensure quicker transfer of information with maximum usability.",
-        key1: " Processor with 4.50 GHz clock speed for quick and dependable processing of data to ensure maximum productivity.",
+        key1: "Processor with 4.50 GHz clock speed for quick and dependable processing of data to ensure maximum productivity.",
         key2: "Hexadeca-core (16 Core) processor core efficiently handles data to ensure quicker transfer of information with maximum usability.",
         key3: "Processor consumes less power to offer maximum productivity with added usability.",
         category: "cpus",

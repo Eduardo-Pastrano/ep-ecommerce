@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { SyncLoader } from 'react-spinners';
-import getProducts from './utils/data.js';
+import { collection, getDocs, query, where } from "firebase/firestore";
 import ItemList from './ItemList.jsx';
+import db from "../db/db.js";
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
@@ -10,21 +11,26 @@ const ItemListContainer = () => {
     const { category } = useParams();
 
     useEffect(() => {
-        getProducts
+        setLoading(true);
+
+        let check
+        const productsRef = collection(db, "products");
+
+        if (category) {
+            check = query(productsRef, where("category", "==", category))
+        } else {
+            check = productsRef;
+        }
+
+        getDocs(check)
             .then((response) => {
-                if (category) {
-                    const filteredProducts = response.filter((product) => product.category === category)
-                    setProducts(filteredProducts);
-                } else {
-                    setProducts(response);
-                }
+                let dbProducts = response.docs.map((product) => {
+                    return { id: product.id, ...product.data() };
+                });
+                setProducts(dbProducts);
             })
-            .catch((error) => {
-                console.log(error);
-            })
-            .finally(() => {
-                setLoading(false);
-            })
+            .catch((error) => console.log(error))
+            .finally(() => setLoading(false));
     }, [category]);
 
     return (
