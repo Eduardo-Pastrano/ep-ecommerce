@@ -45,7 +45,10 @@ const ItemDetail = ({ product }) => {
             {toggle ? (
                 <div className="checkout-btn-container">
                     <Link to="/cart">
-                        <Button className="checkout-btn">Go to checkout</Button>
+                        <Button className="checkout-btn" colorScheme='green'>Go to cart</Button>
+                    </Link>
+                    <Link to="/">
+                        <Button className="item-link">Continue shopping</Button>
                     </Link>
                 </div>
             ) : (

@@ -43,9 +43,12 @@ const Cart = () => {
                 <li className='cart-total'>
                     <strong>Cart total:</strong> ${totalPrice()}
                 </li>
-                <li>
+                <div className='cart-btn-container'>
+                    <Link to="/checkout">
+                        <Button colorScheme='green'>Go to checkout</Button>
+                    </Link>
                     <Button onClick={emptyCart} colorScheme='red'>Empty cart</Button>
-                </li>
+                </div>
             </ul>
         </div>
     )
