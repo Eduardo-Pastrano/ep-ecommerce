@@ -1,0 +1,30 @@
+.item-count-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .item-count-btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        font-size: 20px;
+
+        .count-btn {
+            background-color: rgb(153, 153, 248);
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .count-btn:hover {
+            background-color: rgb(194, 194, 249);
+        }
+    }
+
+    .item-add-btn-container {
+        .item-add-btn {
+            width: 100%;
+            font-weight: 500;
+        }
+    }
+}

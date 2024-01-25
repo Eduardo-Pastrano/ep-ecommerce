@@ -6,7 +6,7 @@ import Error from "./components/Error.jsx";
 import Cart from "./components/Cart.jsx"
 import Checkout from "./components/Checkout.jsx";
 import { CartProvider } from "./context/CartContext.jsx"
-import './App.css';
+import './sass/style.css';
 
 function App() {
   return (
@@ -34,3 +34,5 @@ export default App;
 // NavBar lo dejamos fuera de Routes por que queremos que siempre se muestre, no solo cuando estamos dentro de un componente en especifico, lo mismo para el footer y otros elementos que queramos que siempre se muestren.
 
 // BrowserRouter lo importamos para poder crear rutas y conectar nuestra app.
+
+// CartProvider lo usamos para el Context, de esta manera, podemos enviar funciones desde 'CartContext' a toda nuestra app.

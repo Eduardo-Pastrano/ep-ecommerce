@@ -1,0 +1,16 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.item-list-container {
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+}

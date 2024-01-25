@@ -1,7 +1,6 @@
 import CartWidget from './CartWidget';
 import { Tabs, TabList, Tab } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import '../App.css';
 
 const NavBar = () => {
     return (

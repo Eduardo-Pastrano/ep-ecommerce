@@ -54,9 +54,9 @@ const Checkout = () => {
         <div>
             {
                 orderId ? (
-                    <div>
-                        <h2>Thank you for shopping with us!</h2>
-                        <p>Your order number is: {orderId}</p>
+                    <div className="order-placed">
+                        <h2>Thank you for shopping with us!🛒</h2>
+                        <p>Your order number is: <span>{orderId}</span></p>
                     </div>
                 ) : (
                     <Form formData={formData} saveInputData={saveInputData} sendOrder={sendOrder} />
