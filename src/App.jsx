@@ -12,7 +12,6 @@ function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-
         <NavBar />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
@@ -20,7 +19,7 @@ function App() {
           <Route path="/detail/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<Error message='404 route not found'/>} />
         </Routes>
       </CartProvider>
     </BrowserRouter>

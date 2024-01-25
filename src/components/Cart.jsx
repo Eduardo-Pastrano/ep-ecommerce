@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext.jsx';
 
 const Cart = () => {
-    const { cart, delProductFromCart, emptyCart, totalPrice } = useContext(CartContext);
+    const { cart, delProductFromCart, emptyCart, orderTotal } = useContext(CartContext);
 
     if (cart.length === 0) {
         return (
@@ -41,7 +41,7 @@ const Cart = () => {
             </ul>
             <ul className='cart-total-container'>
                 <li className='cart-total'>
-                    <strong>Cart total:</strong> ${totalPrice()}
+                    <strong>Cart total:</strong> ${orderTotal()}
                 </li>
                 <div className='cart-btn-container'>
                     <Link to="/checkout">

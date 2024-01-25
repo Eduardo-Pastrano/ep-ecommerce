@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from 'sweetalert2';
 
 //Creamos un contexto de React
 const CartContext = createContext();
@@ -21,6 +22,13 @@ const CartProvider = ({ children }) => {
         } else {
             setCart([...cart, product])
         }
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Product added to cart!",
+            showConfirmButton: false,
+            timer: 1500,
+        });
     }
 
     const isInCart = (productId) => {
@@ -31,12 +39,13 @@ const CartProvider = ({ children }) => {
         return cart.reduce((total, product) => total + product.quantity, 0)
     }
 
-    const totalPrice = () => {
+    const orderTotal = () => {
         return cart.reduce((total, product) => total + (product.quantity * product.price), 0)
     }
 
     const emptyCart = () => {
         setCart([]);
+        
     }
 
     const delProductFromCart = (productId) => {
@@ -45,7 +54,7 @@ const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ cart, addProduct, totalQty, totalPrice, emptyCart, delProductFromCart }}>
+        <CartContext.Provider value={{ cart, addProduct, totalQty, orderTotal, emptyCart, delProductFromCart }}>
             {children}
         </CartContext.Provider>
     )

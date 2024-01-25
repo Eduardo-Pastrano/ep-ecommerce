@@ -1,8 +1,25 @@
-# React + Vite
+# EP Technology
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a ReactJs project for CoderHouse. It provides an e-commerce experience, focusing on a technology store that deals in computer parts. The products can be filtered by category, can be added to a cart and simulate the complete process of a purchase order. The cart and checkout processes are designed so it provides the experience necessary to the end user.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Install the project with npm
+
+```bash
+  npm install
+  npm run dev
+```
+## Dependencies
+
+Dependencies user in this project
+
+```bash
+  firebase
+  react-router-dom
+  chakra-ui/icons
+  chakra-ui/react
+  react-spinners
+  sass
+  sweetalert2
+```

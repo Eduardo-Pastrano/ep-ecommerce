@@ -238,15 +238,16 @@ body {
 }
 .checkout-view .checkout-form {
   margin-top: 40px;
-  width: 70vw;
+  width: 40vw;
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-.checkout-view .checkout-form div {
+.checkout-view .checkout-form li {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  list-style-type: none;
 }
 .checkout-view .checkout-form button {
   width: 160px;
@@ -290,4 +291,7 @@ body {
 }
 .order-placed p span {
   font-weight: bold;
+}
+.order-placed .contact-msg {
+  font-style: italic;
 }/*# sourceMappingURL=style.css.map */
